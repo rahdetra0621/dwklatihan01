@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luas dan Keliling Ruang Bangun Persegi</title>
+  <style>
+    *{
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .tengah{display: flex;
+    justify-content: center;
+    }
+    .card{
+      width: 40%;
+      box-shadow: 0 4px 8px 0 rgba(245, 4, 4, 0.2);
+      transition: 0.3s;
+    }
+#txBARU{
+  font-size: 20px;
+}
+.cardbody{
+  padding: 2px 16px;
+}
+.cardfooter{
+  padding: 8px;
+  background-color: rgba blue;
+  display: flex;
+   justify-content: right;
+}
+label{
+  font-weight: bold;
+  font-size: 14px;
+}
+input[type=text]{
+  width: 95%;
+  padding: 2px;
+  margin: 8px 0px;
+}
+button{
+  border:none;
+  border-radius: 8px;
+  bacground-color: green ;
+  color: white;
+  font-weight:bold;
+  padding: 8px 20px;
+}
+  </style>
+</head>
+<body>
+
+
+<div class="tengah">
+
+<div class="card">
+
+
+
+  <h1 id="txBARU">Ruang Bangun Persegi</h1>
+  <div class="cardbody"> 
+  <form>
+   <label>Nilai Panjang (meter)</label>
+    <input type="text" name="txPANJANG" ID="txPANJANG">
+   <label>Nilai Lebar (meter)</label>
+    <input type="text" name="txLEBAR" ID="txLEBAR">
+  </form>
+
+<div id="txHASIL">Nilai Luas dan Keliling</div>
+
+  </div>
+
+  <div class="cardfoother">
+  <button onclick="pesan()">Hitung Luas dan Keliling</button>
+
+  </div>
+</div>
+</div>
+<script>
+  function pesan(){
+    //alert("Belajar JavaScript")
+      let PJ = document.getElementById("txPANJANG").value  
+      let LB = document.getElementById("txLEBAR").value  
+
+      //Proses Hitung Luas
+      let LUAS = PJ*LB
+      let PJLB = parseFloat (PJ) + Number(LB)
+      let KEL = 2*PJLB
+
+      let hsl ="Hitung Luas Peresegi<br>Luas = Panjang X Lebar<br>"
+        hsl += "Luas = "+PJ+"M X "+LB+"<br>"
+        hsl += "Luas = "+LUAS+"M<sup>2</sup><br><br>"
+        hsl += "Hirung Keliling Persegi<br>"
+        hsl += "Keliling = 2 X (Panjang+Lebar)<br>"
+        hsl += "Keliling = 2 X ("+PJ+ "+" +LB+ " M)<br>"
+        hsl += "Keliling = 2 X" +PJLB+ "<br>"
+        hsl += "Keliling = "+KEL+" Meter"
+
+
+
+    document.getElementById ("txHASIL").innerHTML= hsl 
+  }
+</script>
+
+</body>
+</html>
